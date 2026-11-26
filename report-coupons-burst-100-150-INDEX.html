@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html><head><meta charset="utf-8"/><title>All 10 API burst reports index</title>
+<style>
+ body{font-family:-apple-system,Segoe UI,Roboto,sans-serif;margin:24px;background:#f7f8fa}
+ table{border-collapse:collapse;width:100%;background:#fff}
+ th,td{border-bottom:1px solid #eee;padding:8px;text-align:left}
+ th{background:#f3f4f6}
+ .ok{color:#067647;font-weight:600} .fail{color:#b42318;font-weight:600}
+</style></head>
+<body>
+<h1>Separate burst reports — all 10 coupon APIs</h1>
+<p>Each link is its own report: 100 in 10s → 150 in 10s, IST time log for every request.</p>
+<table>
+<thead>
+<tr>
+  <th>#</th><th>API</th>
+  <th>100 OK</th><th>100 429</th><th>100 other</th>
+  <th>150 OK</th><th>150 429</th><th>150 other</th>
+  <th>Report</th>
+</tr>
+</thead>
+<tbody>
+        <tr>
+          <td>01-create</td>
+          <td>1 POST /payments/coupon (create template)</td>
+          <td class="ok">100</td>
+          <td class="fail">0</td>
+          <td>0</td>
+          <td class="ok">105</td>
+          <td class="fail">45</td>
+          <td>0</td>
+          <td><a href="report-coupons-burst-100-150-01-create.html">report-coupons-burst-100-150-01-create.html</a></td>
+        </tr>
+        <tr>
+          <td>02-generate-minimal</td>
+          <td>2 POST /payments/coupon/{{id}}/codes (minimal)</td>
+          <td class="ok">100</td>
+          <td class="fail">0</td>
+          <td>0</td>
+          <td class="ok">102</td>
+          <td class="fail">48</td>
+          <td>0</td>
+          <td><a href="report-coupons-burst-100-150-02-generate-minimal.html">report-coupons-burst-100-150-02-generate-minimal.html</a></td>
+        </tr>
+        <tr>
+          <td>03-generate-contact</td>
+          <td>3 POST /payments/coupon/{{id}}/codes (contact+7d)</td>
+          <td class="ok">100</td>
+          <td class="fail">0</td>
+          <td>0</td>
+          <td class="ok">4</td>
+          <td class="fail">46</td>
+          <td>100</td>
+          <td><a href="report-coupons-burst-100-150-03-generate-contact.html">report-coupons-burst-100-150-03-generate-contact.html</a></td>
+        </tr>
+        <tr>
+          <td>04-generate-dates</td>
+          <td>4 POST /payments/coupon/{{id}}/codes (explicit dates)</td>
+          <td class="ok">100</td>
+          <td class="fail">0</td>
+          <td>0</td>
+          <td class="ok">104</td>
+          <td class="fail">46</td>
+          <td>0</td>
+          <td><a href="report-coupons-burst-100-150-04-generate-dates.html">report-coupons-burst-100-150-04-generate-dates.html</a></td>
+        </tr>
+        <tr>
+          <td>05-list</td>
+          <td>5 GET /payments/coupon/{{id}}/codes (list)</td>
+          <td class="ok">100</td>
+          <td class="fail">0</td>
+          <td>0</td>
+          <td class="ok">105</td>
+          <td class="fail">45</td>
+          <td>0</td>
+          <td><a href="report-coupons-burst-100-150-05-list.html">report-coupons-burst-100-150-05-list.html</a></td>
+        </tr>
+        <tr>
+          <td>06-list-filters</td>
+          <td>6 GET /payments/coupon/{{id}}/codes (filters)</td>
+          <td class="ok">100</td>
+          <td class="fail">0</td>
+          <td>0</td>
+          <td class="ok">105</td>
+          <td class="fail">45</td>
+          <td>0</td>
+          <td><a href="report-coupons-burst-100-150-06-list-filters.html">report-coupons-burst-100-150-06-list-filters.html</a></td>
+        </tr>
+        <tr>
+          <td>07-export</td>
+          <td>7 POST /payments/coupon/{{id}}/codes/export</td>
+          <td class="ok">0</td>
+          <td class="fail">0</td>
+          <td>100</td>
+          <td class="ok">0</td>
+          <td class="fail">46</td>
+          <td>104</td>
+          <td><a href="report-coupons-burst-100-150-07-export.html">report-coupons-burst-100-150-07-export.html</a></td>
+        </tr>
+        <tr>
+          <td>08-delete</td>
+          <td>8 DELETE /payments/coupon/{{id}}/codes/{{codeId}}</td>
+          <td class="ok">100</td>
+          <td class="fail">0</td>
+          <td>0</td>
+          <td class="ok">105</td>
+          <td class="fail">45</td>
+          <td>0</td>
+          <td><a href="report-coupons-burst-100-150-08-delete.html">report-coupons-burst-100-150-08-delete.html</a></td>
+        </tr>
+        <tr>
+          <td>09-archive</td>
+          <td>9 POST /payments/coupon/{{id}}/archive</td>
+          <td class="ok">100</td>
+          <td class="fail">0</td>
+          <td>0</td>
+          <td class="ok">109</td>
+          <td class="fail">41</td>
+          <td>0</td>
+          <td><a href="report-coupons-burst-100-150-09-archive.html">report-coupons-burst-100-150-09-archive.html</a></td>
+        </tr>
+        <tr>
+          <td>10-unarchive</td>
+          <td>10 POST /payments/coupon/{{id}}/unarchive</td>
+          <td class="ok">100</td>
+          <td class="fail">0</td>
+          <td>0</td>
+          <td class="ok">104</td>
+          <td class="fail">46</td>
+          <td>0</td>
+          <td><a href="report-coupons-burst-100-150-10-unarchive.html">report-coupons-burst-100-150-10-unarchive.html</a></td>
+        </tr></tbody>
+</table>
+</body></html>

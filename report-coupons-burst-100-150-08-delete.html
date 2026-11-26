@@ -1,0 +1,2886 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"/>
+  <title>8 DELETE /payments/coupon/{{id}}/codes/{{codeId}} — burst 100 then 150 (IST)</title>
+  <style>
+    body { font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, sans-serif; margin: 24px; background:#f7f8fa; color:#111; }
+    h1 { margin-bottom: 4px; }
+    .sub { color:#555; margin-bottom: 20px; }
+    .card { background:#fff; border:1px solid #e5e7eb; border-radius:10px; padding:16px 20px; margin-bottom:16px; }
+    table { border-collapse: collapse; width:100%; font-size:13px; }
+    th, td { border-bottom:1px solid #eee; padding:7px 8px; text-align:left; }
+    th { background:#f3f4f6; position: sticky; top: 0; }
+    tr.ok td { background: #f0fdf4; }
+    tr.fail td { background: #fef3f2; }
+    .ok { color:#067647; font-weight:600; }
+    .fail { color:#b42318; font-weight:600; }
+    .pill { display:inline-block; padding:2px 8px; border-radius:999px; background:#eef2ff; font-size:12px; margin-right:6px; }
+    code { background:#f3f4f6; padding:1px 4px; border-radius:4px; font-size:12px; }
+  </style>
+</head>
+<body>
+  <h1>8 DELETE /payments/coupon/{{id}}/codes/{{codeId}}</h1>
+  <p class="sub">
+    Separate report for this API only.<br/>
+    Pattern: <strong>100 requests in 10s</strong> → wait reset → <strong>150 requests in 10s</strong>.<br/>
+    Times: <strong>Indian Standard Time (IST)</strong>. Full time log for every request.
+  </p>
+
+  <div class="card">
+    <p><span class="pill">Host</span> https://staging.services.leadconnectorhq.com</p>
+    <p><span class="pill">Auth</span> PIT</p>
+    <p><span class="pill">Location</span> <code>ZQ9gWdXsfu0I5D6HOBMV</code></p>
+    <p><span class="pill">Template</span> <code>6b081ec71c592cfc7dbafd05</code></p>
+    <p><span class="pill">Note</span> Deletes stocked unredeemed codes.</p>
+    <p><span class="pill">Limit</span> 100 requests / 10 seconds</p>
+    <p><span class="pill">Started (IST)</span> 2026-11-26 17:28:43.318 IST</p>
+    <p><span class="pill">Ended (IST)</span> 2026-11-26 17:29:27.716 IST</p>
+    <p><span class="pill">CSV</span> <code>report-coupons-burst-100-150-08-delete.csv</code></p>
+  </div>
+
+  <div class="card">
+    <h2>1) Summary</h2>
+    <table>
+      <thead>
+        <tr>
+          <th>Wave</th><th>Planned</th><th>Sent in 10s</th><th>Wall</th>
+          <th>OK 2xx</th><th>429</th><th>Other</th><th>Statuses</th>
+          <th>Avg ms</th><th>Median</th><th>95%ile</th><th>Wave start (IST)</th>
+        </tr>
+      </thead>
+      <tbody>
+        
+        <tr>
+          <td>Wave 1 — 100 in 10s</td>
+          <td>100</td>
+          <td>100</td>
+          <td>10.77s</td>
+          <td class="ok">100</td>
+          <td class="fail">0</td>
+          <td>0</td>
+          <td><code>{'204': 100}</code></td>
+          <td>866</td>
+          <td>858</td>
+          <td>913</td>
+          <td><code>2026-11-26 17:28:54.321 IST</code></td>
+        </tr>
+        
+        <tr>
+          <td>Wave 2 — 150 in 10s</td>
+          <td>150</td>
+          <td>150</td>
+          <td>10.62s</td>
+          <td class="ok">105</td>
+          <td class="fail">45</td>
+          <td>0</td>
+          <td><code>{'204': 105, '429': 45}</code></td>
+          <td>810</td>
+          <td>854</td>
+          <td>887</td>
+          <td><code>2026-11-26 17:29:17.091 IST</code></td>
+        </tr>
+      </tbody>
+    </table>
+    <p>
+      <strong>Simple:</strong>
+      100 → OK=100, 429=0, other=0.
+      150 → OK=105, 429=45, other=0.
+    </p>
+  </div>
+
+  <div class="card">
+    <h2>2) Per-second tracker — Wave 1 (100)</h2>
+    <table>
+      <thead><tr><th>Second</th><th>OK</th><th>429</th><th>Other</th></tr></thead>
+      <tbody><tr><td>0–1s</td><td class='ok'>10</td><td class='fail'>0</td><td>0</td></tr><tr><td>1–2s</td><td class='ok'>10</td><td class='fail'>0</td><td>0</td></tr><tr><td>2–3s</td><td class='ok'>10</td><td class='fail'>0</td><td>0</td></tr><tr><td>3–4s</td><td class='ok'>10</td><td class='fail'>0</td><td>0</td></tr><tr><td>4–5s</td><td class='ok'>10</td><td class='fail'>0</td><td>0</td></tr><tr><td>5–6s</td><td class='ok'>10</td><td class='fail'>0</td><td>0</td></tr><tr><td>6–7s</td><td class='ok'>10</td><td class='fail'>0</td><td>0</td></tr><tr><td>7–8s</td><td class='ok'>10</td><td class='fail'>0</td><td>0</td></tr><tr><td>8–9s</td><td class='ok'>10</td><td class='fail'>0</td><td>0</td></tr><tr><td>9–10s</td><td class='ok'>10</td><td class='fail'>0</td><td>0</td></tr></tbody>
+    </table>
+  </div>
+
+  <div class="card">
+    <h2>3) Per-second tracker — Wave 2 (150)</h2>
+    <table>
+      <thead><tr><th>Second</th><th>OK</th><th>429</th><th>Other</th></tr></thead>
+      <tbody><tr><td>0–1s</td><td class='ok'>15</td><td class='fail'>0</td><td>0</td></tr><tr><td>1–2s</td><td class='ok'>15</td><td class='fail'>0</td><td>0</td></tr><tr><td>2–3s</td><td class='ok'>15</td><td class='fail'>0</td><td>0</td></tr><tr><td>3–4s</td><td class='ok'>15</td><td class='fail'>0</td><td>0</td></tr><tr><td>4–5s</td><td class='ok'>15</td><td class='fail'>0</td><td>0</td></tr><tr><td>5–6s</td><td class='ok'>15</td><td class='fail'>0</td><td>0</td></tr><tr><td>6–7s</td><td class='ok'>15</td><td class='fail'>0</td><td>0</td></tr><tr><td>7–8s</td><td class='ok'>0</td><td class='fail'>15</td><td>0</td></tr><tr><td>8–9s</td><td class='ok'>0</td><td class='fail'>15</td><td>0</td></tr><tr><td>9–10s</td><td class='ok'>0</td><td class='fail'>15</td><td>0</td></tr></tbody>
+    </table>
+  </div>
+
+  <div class="card">
+    <h2>4) Full time log — Wave 1 (all 100)</h2>
+    <table>
+      <thead>
+        <tr>
+          <th>#</th><th>sent_offset_s</th><th>done_offset_s</th><th>ms</th>
+          <th>status</th><th>rate_remaining</th><th>rate_max</th>
+          <th>daily_remaining</th><th>sent_time (IST)</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr class="ok">
+          <td>1</td>
+          <td>0.001</td>
+          <td>0.859</td>
+          <td>858</td>
+          <td>204</td>
+          <td>99</td>
+          <td>100</td>
+          <td>192944</td>
+          <td><code>2026-11-26 17:28:54.322 IST</code></td>
+        </tr>
+        <tr class="ok">
+          <td>2</td>
+          <td>0.105</td>
+          <td>1.038</td>
+          <td>932</td>
+          <td>204</td>
+          <td>99</td>
+          <td>100</td>
+          <td>192943</td>
+          <td><code>2026-11-26 17:28:54.427 IST</code></td>
+        </tr>
+        <tr class="ok">
+          <td>3</td>
+          <td>0.203</td>
+          <td>1.113</td>
+          <td>909</td>
+          <td>204</td>
+          <td>98</td>
+          <td>100</td>
+          <td>192942</td>
+          <td><code>2026-11-26 17:28:54.525 IST</code></td>
+        </tr>
+        <tr class="ok">
+          <td>4</td>
+          <td>0.305</td>
+          <td>1.233</td>
+          <td>928</td>
+          <td>204</td>
+          <td>97</td>
+          <td>100</td>
+          <td>192941</td>
+          <td><code>2026-11-26 17:28:54.627 IST</code></td>
+        </tr>
+        <tr class="ok">
+          <td>5</td>
+          <td>0.405</td>
+          <td>1.319</td>
+          <td>913</td>
+          <td>204</td>
+          <td>96</td>
+          <td>100</td>
+          <td>192940</td>
+          <td><code>2026-11-26 17:28:54.727 IST</code></td>
+        </tr>
+        <tr class="ok">
+          <td>6</td>
+          <td>0.501</td>
+          <td>1.435</td>
+          <td>933</td>
+          <td>204</td>
+          <td>95</td>
+          <td>100</td>
+          <td>192939</td>
+          <td><code>2026-11-26 17:28:54.823 IST</code></td>
+        </tr>
+        <tr class="ok">
+          <td>7</td>
+          <td>0.605</td>
+          <td>1.522</td>
+          <td>917</td>
+          <td>204</td>
+          <td>94</td>
+          <td>100</td>
+          <td>192938</td>
+          <td><code>2026-11-26 17:28:54.927 IST</code></td>
+        </tr>
+        <tr class="ok">
+          <td>8</td>
+          <td>0.701</td>
+          <td>1.555</td>
+          <td>853</td>
+          <td>204</td>
+          <td>94</td>
+          <td>100</td>
+          <td>192938</td>
+          <td><code>2026-11-26 17:28:55.023 IST</code></td>
+        </tr>
+        <tr class="ok">
+          <td>9</td>
+          <td>0.803</td>
+          <td>1.661</td>
+          <td>858</td>
+          <td>204</td>
+          <td>93</td>
+          <td>100</td>
+          <td>192936</td>
+          <td><code>2026-11-26 17:28:55.124 IST</code></td>
+        </tr>
+        <tr class="ok">
+          <td>10</td>
+          <td>0.905</td>
+          <td>1.759</td>
+          <td>853</td>
+          <td>204</td>
+          <td>91</td>
+          <td>100</td>
+          <td>192935</td>
+          <td><code>2026-11-26 17:28:55.227 IST</code></td>
+        </tr>
+        <tr class="ok">
+          <td>11</td>
+          <td>1.005</td>
+          <td>1.868</td>
+          <td>862</td>
+          <td>204</td>
+          <td>90</td>
+          <td>100</td>
+          <td>192934</td>
+          <td><code>2026-11-26 17:28:55.327 IST</code></td>
+        </tr>
+        <tr class="ok">
+          <td>12</td>
+          <td>1.105</td>
+          <td>1.963</td>
+          <td>857</td>
+          <td>204</td>
+          <td>89</td>
+          <td>100</td>
+          <td>192933</td>
+          <td><code>2026-11-26 17:28:55.427 IST</code></td>
+        </tr>
+        <tr class="ok">
+          <td>13</td>
+          <td>1.203</td>
+          <td>2.055</td>
+          <td>851</td>
+          <td>204</td>
+          <td>88</td>
+          <td>100</td>
+          <td>192932</td>
+          <td><code>2026-11-26 17:28:55.524 IST</code></td>
+        </tr>
+        <tr class="ok">
+          <td>14</td>
+          <td>1.304</td>
+          <td>2.163</td>
+          <td>858</td>
+          <td>204</td>
+          <td>87</td>
+          <td>100</td>
+          <td>192931</td>
+          <td><code>2026-11-26 17:28:55.625 IST</code></td>
+        </tr>
+        <tr class="ok">
+          <td>15</td>
+          <td>1.405</td>
+          <td>2.259</td>
+          <td>854</td>
+          <td>204</td>
+          <td>86</td>
+          <td>100</td>
+          <td>192930</td>
+          <td><code>2026-11-26 17:28:55.727 IST</code></td>
+        </tr>
+        <tr class="ok">
+          <td>16</td>
+          <td>1.501</td>
+          <td>2.351</td>
+          <td>849</td>
+          <td>204</td>
+          <td>85</td>
+          <td>100</td>
+          <td>192929</td>
+          <td><code>2026-11-26 17:28:55.823 IST</code></td>
+        </tr>
+        <tr class="ok">
+          <td>17</td>
+          <td>1.605</td>
+          <td>2.459</td>
+          <td>853</td>
+          <td>204</td>
+          <td>84</td>
+          <td>100</td>
+          <td>192928</td>
+          <td><code>2026-11-26 17:28:55.927 IST</code></td>
+        </tr>
+        <tr class="ok">
+          <td>18</td>
+          <td>1.705</td>
+          <td>2.554</td>
+          <td>848</td>
+          <td>204</td>
+          <td>83</td>
+          <td>100</td>
+          <td>192927</td>
+          <td><code>2026-11-26 17:28:56.027 IST</code></td>
+        </tr>
+        <tr class="ok">
+          <td>19</td>
+          <td>1.805</td>
+          <td>2.663</td>
+          <td>857</td>
+          <td>204</td>
+          <td>82</td>
+          <td>100</td>
+          <td>192926</td>
+          <td><code>2026-11-26 17:28:56.127 IST</code></td>
+        </tr>
+        <tr class="ok">
+          <td>20</td>
+          <td>1.902</td>
+          <td>2.763</td>
+          <td>860</td>
+          <td>204</td>
+          <td>81</td>
+          <td>100</td>
+          <td>192925</td>
+          <td><code>2026-11-26 17:28:56.224 IST</code></td>
+        </tr>
+        <tr class="ok">
+          <td>21</td>
+          <td>2.005</td>
+          <td>2.858</td>
+          <td>852</td>
+          <td>204</td>
+          <td>80</td>
+          <td>100</td>
+          <td>192924</td>
+          <td><code>2026-11-26 17:28:56.327 IST</code></td>
+        </tr>
+        <tr class="ok">
+          <td>22</td>
+          <td>2.105</td>
+          <td>2.964</td>
+          <td>858</td>
+          <td>204</td>
+          <td>79</td>
+          <td>100</td>
+          <td>192923</td>
+          <td><code>2026-11-26 17:28:56.427 IST</code></td>
+        </tr>
+        <tr class="ok">
+          <td>23</td>
+          <td>2.203</td>
+          <td>3.061</td>
+          <td>857</td>
+          <td>204</td>
+          <td>78</td>
+          <td>100</td>
+          <td>192922</td>
+          <td><code>2026-11-26 17:28:56.524 IST</code></td>
+        </tr>
+        <tr class="ok">
+          <td>24</td>
+          <td>2.305</td>
+          <td>3.168</td>
+          <td>862</td>
+          <td>204</td>
+          <td>77</td>
+          <td>100</td>
+          <td>192921</td>
+          <td><code>2026-11-26 17:28:56.627 IST</code></td>
+        </tr>
+        <tr class="ok">
+          <td>25</td>
+          <td>2.403</td>
+          <td>3.299</td>
+          <td>896</td>
+          <td>204</td>
+          <td>76</td>
+          <td>100</td>
+          <td>192920</td>
+          <td><code>2026-11-26 17:28:56.724 IST</code></td>
+        </tr>
+        <tr class="ok">
+          <td>26</td>
+          <td>2.505</td>
+          <td>3.371</td>
+          <td>865</td>
+          <td>204</td>
+          <td>75</td>
+          <td>100</td>
+          <td>192920</td>
+          <td><code>2026-11-26 17:28:56.827 IST</code></td>
+        </tr>
+        <tr class="ok">
+          <td>27</td>
+          <td>2.605</td>
+          <td>3.47</td>
+          <td>864</td>
+          <td>204</td>
+          <td>74</td>
+          <td>100</td>
+          <td>192918</td>
+          <td><code>2026-11-26 17:28:56.927 IST</code></td>
+        </tr>
+        <tr class="ok">
+          <td>28</td>
+          <td>2.705</td>
+          <td>3.575</td>
+          <td>869</td>
+          <td>204</td>
+          <td>73</td>
+          <td>100</td>
+          <td>192917</td>
+          <td><code>2026-11-26 17:28:57.027 IST</code></td>
+        </tr>
+        <tr class="ok">
+          <td>29</td>
+          <td>2.803</td>
+          <td>3.659</td>
+          <td>856</td>
+          <td>204</td>
+          <td>72</td>
+          <td>100</td>
+          <td>192916</td>
+          <td><code>2026-11-26 17:28:57.124 IST</code></td>
+        </tr>
+        <tr class="ok">
+          <td>30</td>
+          <td>2.901</td>
+          <td>3.771</td>
+          <td>869</td>
+          <td>204</td>
+          <td>71</td>
+          <td>100</td>
+          <td>192915</td>
+          <td><code>2026-11-26 17:28:57.223 IST</code></td>
+        </tr>
+        <tr class="ok">
+          <td>31</td>
+          <td>3.005</td>
+          <td>3.866</td>
+          <td>861</td>
+          <td>204</td>
+          <td>70</td>
+          <td>100</td>
+          <td>192914</td>
+          <td><code>2026-11-26 17:28:57.327 IST</code></td>
+        </tr>
+        <tr class="ok">
+          <td>32</td>
+          <td>3.105</td>
+          <td>3.959</td>
+          <td>853</td>
+          <td>204</td>
+          <td>69</td>
+          <td>100</td>
+          <td>192913</td>
+          <td><code>2026-11-26 17:28:57.427 IST</code></td>
+        </tr>
+        <tr class="ok">
+          <td>33</td>
+          <td>3.204</td>
+          <td>4.065</td>
+          <td>860</td>
+          <td>204</td>
+          <td>68</td>
+          <td>100</td>
+          <td>192912</td>
+          <td><code>2026-11-26 17:28:57.526 IST</code></td>
+        </tr>
+        <tr class="ok">
+          <td>34</td>
+          <td>3.301</td>
+          <td>4.159</td>
+          <td>857</td>
+          <td>204</td>
+          <td>67</td>
+          <td>100</td>
+          <td>192911</td>
+          <td><code>2026-11-26 17:28:57.623 IST</code></td>
+        </tr>
+        <tr class="ok">
+          <td>35</td>
+          <td>3.405</td>
+          <td>4.262</td>
+          <td>856</td>
+          <td>204</td>
+          <td>66</td>
+          <td>100</td>
+          <td>192910</td>
+          <td><code>2026-11-26 17:28:57.727 IST</code></td>
+        </tr>
+        <tr class="ok">
+          <td>36</td>
+          <td>3.505</td>
+          <td>4.37</td>
+          <td>865</td>
+          <td>204</td>
+          <td>65</td>
+          <td>100</td>
+          <td>192909</td>
+          <td><code>2026-11-26 17:28:57.826 IST</code></td>
+        </tr>
+        <tr class="ok">
+          <td>37</td>
+          <td>3.603</td>
+          <td>4.453</td>
+          <td>850</td>
+          <td>204</td>
+          <td>64</td>
+          <td>100</td>
+          <td>192908</td>
+          <td><code>2026-11-26 17:28:57.924 IST</code></td>
+        </tr>
+        <tr class="ok">
+          <td>38</td>
+          <td>3.704</td>
+          <td>4.577</td>
+          <td>872</td>
+          <td>204</td>
+          <td>63</td>
+          <td>100</td>
+          <td>192907</td>
+          <td><code>2026-11-26 17:28:58.025 IST</code></td>
+        </tr>
+        <tr class="ok">
+          <td>39</td>
+          <td>3.805</td>
+          <td>4.663</td>
+          <td>858</td>
+          <td>204</td>
+          <td>62</td>
+          <td>100</td>
+          <td>192906</td>
+          <td><code>2026-11-26 17:28:58.127 IST</code></td>
+        </tr>
+        <tr class="ok">
+          <td>40</td>
+          <td>3.901</td>
+          <td>4.794</td>
+          <td>892</td>
+          <td>204</td>
+          <td>61</td>
+          <td>100</td>
+          <td>192905</td>
+          <td><code>2026-11-26 17:28:58.223 IST</code></td>
+        </tr>
+        <tr class="ok">
+          <td>41</td>
+          <td>4.003</td>
+          <td>4.858</td>
+          <td>855</td>
+          <td>204</td>
+          <td>60</td>
+          <td>100</td>
+          <td>192904</td>
+          <td><code>2026-11-26 17:28:58.324 IST</code></td>
+        </tr>
+        <tr class="ok">
+          <td>42</td>
+          <td>4.1</td>
+          <td>4.992</td>
+          <td>891</td>
+          <td>204</td>
+          <td>59</td>
+          <td>100</td>
+          <td>192903</td>
+          <td><code>2026-11-26 17:28:58.422 IST</code></td>
+        </tr>
+        <tr class="ok">
+          <td>43</td>
+          <td>4.203</td>
+          <td>5.062</td>
+          <td>859</td>
+          <td>204</td>
+          <td>58</td>
+          <td>100</td>
+          <td>192902</td>
+          <td><code>2026-11-26 17:28:58.524 IST</code></td>
+        </tr>
+        <tr class="ok">
+          <td>44</td>
+          <td>4.305</td>
+          <td>5.162</td>
+          <td>857</td>
+          <td>204</td>
+          <td>57</td>
+          <td>100</td>
+          <td>192901</td>
+          <td><code>2026-11-26 17:28:58.627 IST</code></td>
+        </tr>
+        <tr class="ok">
+          <td>45</td>
+          <td>4.405</td>
+          <td>5.314</td>
+          <td>908</td>
+          <td>204</td>
+          <td>56</td>
+          <td>100</td>
+          <td>192900</td>
+          <td><code>2026-11-26 17:28:58.727 IST</code></td>
+        </tr>
+        <tr class="ok">
+          <td>46</td>
+          <td>4.502</td>
+          <td>5.354</td>
+          <td>852</td>
+          <td>204</td>
+          <td>55</td>
+          <td>100</td>
+          <td>192900</td>
+          <td><code>2026-11-26 17:28:58.823 IST</code></td>
+        </tr>
+        <tr class="ok">
+          <td>47</td>
+          <td>4.601</td>
+          <td>5.461</td>
+          <td>860</td>
+          <td>204</td>
+          <td>55</td>
+          <td>100</td>
+          <td>192898</td>
+          <td><code>2026-11-26 17:28:58.922 IST</code></td>
+        </tr>
+        <tr class="ok">
+          <td>48</td>
+          <td>4.717</td>
+          <td>5.647</td>
+          <td>929</td>
+          <td>204</td>
+          <td>52</td>
+          <td>100</td>
+          <td>192897</td>
+          <td><code>2026-11-26 17:28:59.054 IST</code></td>
+        </tr>
+        <tr class="ok">
+          <td>49</td>
+          <td>4.803</td>
+          <td>5.659</td>
+          <td>855</td>
+          <td>204</td>
+          <td>52</td>
+          <td>100</td>
+          <td>192897</td>
+          <td><code>2026-11-26 17:28:59.124 IST</code></td>
+        </tr>
+        <tr class="ok">
+          <td>50</td>
+          <td>4.905</td>
+          <td>5.764</td>
+          <td>858</td>
+          <td>204</td>
+          <td>52</td>
+          <td>100</td>
+          <td>192895</td>
+          <td><code>2026-11-26 17:28:59.227 IST</code></td>
+        </tr>
+        <tr class="ok">
+          <td>51</td>
+          <td>5.001</td>
+          <td>5.899</td>
+          <td>898</td>
+          <td>204</td>
+          <td>50</td>
+          <td>100</td>
+          <td>192894</td>
+          <td><code>2026-11-26 17:28:59.323 IST</code></td>
+        </tr>
+        <tr class="ok">
+          <td>52</td>
+          <td>5.102</td>
+          <td>5.984</td>
+          <td>882</td>
+          <td>204</td>
+          <td>49</td>
+          <td>100</td>
+          <td>192893</td>
+          <td><code>2026-11-26 17:28:59.423 IST</code></td>
+        </tr>
+        <tr class="ok">
+          <td>53</td>
+          <td>5.204</td>
+          <td>6.111</td>
+          <td>906</td>
+          <td>204</td>
+          <td>48</td>
+          <td>100</td>
+          <td>192892</td>
+          <td><code>2026-11-26 17:28:59.526 IST</code></td>
+        </tr>
+        <tr class="ok">
+          <td>54</td>
+          <td>5.305</td>
+          <td>6.208</td>
+          <td>903</td>
+          <td>204</td>
+          <td>47</td>
+          <td>100</td>
+          <td>192891</td>
+          <td><code>2026-11-26 17:28:59.626 IST</code></td>
+        </tr>
+        <tr class="ok">
+          <td>55</td>
+          <td>5.405</td>
+          <td>6.311</td>
+          <td>905</td>
+          <td>204</td>
+          <td>46</td>
+          <td>100</td>
+          <td>192890</td>
+          <td><code>2026-11-26 17:28:59.727 IST</code></td>
+        </tr>
+        <tr class="ok">
+          <td>56</td>
+          <td>5.505</td>
+          <td>6.376</td>
+          <td>870</td>
+          <td>204</td>
+          <td>46</td>
+          <td>100</td>
+          <td>192890</td>
+          <td><code>2026-11-26 17:28:59.827 IST</code></td>
+        </tr>
+        <tr class="ok">
+          <td>57</td>
+          <td>5.605</td>
+          <td>6.461</td>
+          <td>855</td>
+          <td>204</td>
+          <td>45</td>
+          <td>100</td>
+          <td>192888</td>
+          <td><code>2026-11-26 17:28:59.927 IST</code></td>
+        </tr>
+        <tr class="ok">
+          <td>58</td>
+          <td>5.701</td>
+          <td>6.556</td>
+          <td>855</td>
+          <td>204</td>
+          <td>43</td>
+          <td>100</td>
+          <td>192887</td>
+          <td><code>2026-11-26 17:29:00.022 IST</code></td>
+        </tr>
+        <tr class="ok">
+          <td>59</td>
+          <td>5.803</td>
+          <td>6.651</td>
+          <td>847</td>
+          <td>204</td>
+          <td>42</td>
+          <td>100</td>
+          <td>192886</td>
+          <td><code>2026-11-26 17:29:00.124 IST</code></td>
+        </tr>
+        <tr class="ok">
+          <td>60</td>
+          <td>5.901</td>
+          <td>6.746</td>
+          <td>845</td>
+          <td>204</td>
+          <td>41</td>
+          <td>100</td>
+          <td>192885</td>
+          <td><code>2026-11-26 17:29:00.222 IST</code></td>
+        </tr>
+        <tr class="ok">
+          <td>61</td>
+          <td>6.004</td>
+          <td>6.85</td>
+          <td>845</td>
+          <td>204</td>
+          <td>40</td>
+          <td>100</td>
+          <td>192884</td>
+          <td><code>2026-11-26 17:29:00.326 IST</code></td>
+        </tr>
+        <tr class="ok">
+          <td>62</td>
+          <td>6.105</td>
+          <td>6.962</td>
+          <td>856</td>
+          <td>204</td>
+          <td>39</td>
+          <td>100</td>
+          <td>192883</td>
+          <td><code>2026-11-26 17:29:00.427 IST</code></td>
+        </tr>
+        <tr class="ok">
+          <td>63</td>
+          <td>6.202</td>
+          <td>7.05</td>
+          <td>847</td>
+          <td>204</td>
+          <td>38</td>
+          <td>100</td>
+          <td>192882</td>
+          <td><code>2026-11-26 17:29:00.523 IST</code></td>
+        </tr>
+        <tr class="ok">
+          <td>64</td>
+          <td>6.302</td>
+          <td>7.15</td>
+          <td>848</td>
+          <td>204</td>
+          <td>37</td>
+          <td>100</td>
+          <td>192881</td>
+          <td><code>2026-11-26 17:29:00.623 IST</code></td>
+        </tr>
+        <tr class="ok">
+          <td>65</td>
+          <td>6.403</td>
+          <td>7.278</td>
+          <td>874</td>
+          <td>204</td>
+          <td>36</td>
+          <td>100</td>
+          <td>192880</td>
+          <td><code>2026-11-26 17:29:00.724 IST</code></td>
+        </tr>
+        <tr class="ok">
+          <td>66</td>
+          <td>6.502</td>
+          <td>7.361</td>
+          <td>859</td>
+          <td>204</td>
+          <td>35</td>
+          <td>100</td>
+          <td>192880</td>
+          <td><code>2026-11-26 17:29:00.823 IST</code></td>
+        </tr>
+        <tr class="ok">
+          <td>67</td>
+          <td>6.601</td>
+          <td>7.462</td>
+          <td>860</td>
+          <td>204</td>
+          <td>34</td>
+          <td>100</td>
+          <td>192878</td>
+          <td><code>2026-11-26 17:29:00.923 IST</code></td>
+        </tr>
+        <tr class="ok">
+          <td>68</td>
+          <td>6.705</td>
+          <td>7.571</td>
+          <td>866</td>
+          <td>204</td>
+          <td>33</td>
+          <td>100</td>
+          <td>192877</td>
+          <td><code>2026-11-26 17:29:01.027 IST</code></td>
+        </tr>
+        <tr class="ok">
+          <td>69</td>
+          <td>6.8</td>
+          <td>7.666</td>
+          <td>866</td>
+          <td>204</td>
+          <td>32</td>
+          <td>100</td>
+          <td>192876</td>
+          <td><code>2026-11-26 17:29:01.122 IST</code></td>
+        </tr>
+        <tr class="ok">
+          <td>70</td>
+          <td>6.901</td>
+          <td>7.778</td>
+          <td>877</td>
+          <td>204</td>
+          <td>31</td>
+          <td>100</td>
+          <td>192875</td>
+          <td><code>2026-11-26 17:29:01.222 IST</code></td>
+        </tr>
+        <tr class="ok">
+          <td>71</td>
+          <td>7.004</td>
+          <td>7.869</td>
+          <td>864</td>
+          <td>204</td>
+          <td>30</td>
+          <td>100</td>
+          <td>192874</td>
+          <td><code>2026-11-26 17:29:01.326 IST</code></td>
+        </tr>
+        <tr class="ok">
+          <td>72</td>
+          <td>7.104</td>
+          <td>7.97</td>
+          <td>865</td>
+          <td>204</td>
+          <td>29</td>
+          <td>100</td>
+          <td>192873</td>
+          <td><code>2026-11-26 17:29:01.426 IST</code></td>
+        </tr>
+        <tr class="ok">
+          <td>73</td>
+          <td>7.205</td>
+          <td>8.083</td>
+          <td>877</td>
+          <td>204</td>
+          <td>28</td>
+          <td>100</td>
+          <td>192872</td>
+          <td><code>2026-11-26 17:29:01.527 IST</code></td>
+        </tr>
+        <tr class="ok">
+          <td>74</td>
+          <td>7.305</td>
+          <td>8.182</td>
+          <td>877</td>
+          <td>204</td>
+          <td>27</td>
+          <td>100</td>
+          <td>192871</td>
+          <td><code>2026-11-26 17:29:01.626 IST</code></td>
+        </tr>
+        <tr class="ok">
+          <td>75</td>
+          <td>7.401</td>
+          <td>8.277</td>
+          <td>876</td>
+          <td>204</td>
+          <td>26</td>
+          <td>100</td>
+          <td>192870</td>
+          <td><code>2026-11-26 17:29:01.722 IST</code></td>
+        </tr>
+        <tr class="ok">
+          <td>76</td>
+          <td>7.505</td>
+          <td>8.378</td>
+          <td>872</td>
+          <td>204</td>
+          <td>25</td>
+          <td>100</td>
+          <td>192869</td>
+          <td><code>2026-11-26 17:29:01.826 IST</code></td>
+        </tr>
+        <tr class="ok">
+          <td>77</td>
+          <td>7.602</td>
+          <td>8.47</td>
+          <td>867</td>
+          <td>204</td>
+          <td>24</td>
+          <td>100</td>
+          <td>192868</td>
+          <td><code>2026-11-26 17:29:01.924 IST</code></td>
+        </tr>
+        <tr class="ok">
+          <td>78</td>
+          <td>7.705</td>
+          <td>8.574</td>
+          <td>869</td>
+          <td>204</td>
+          <td>23</td>
+          <td>100</td>
+          <td>192867</td>
+          <td><code>2026-11-26 17:29:02.026 IST</code></td>
+        </tr>
+        <tr class="ok">
+          <td>79</td>
+          <td>7.801</td>
+          <td>8.654</td>
+          <td>852</td>
+          <td>204</td>
+          <td>22</td>
+          <td>100</td>
+          <td>192867</td>
+          <td><code>2026-11-26 17:29:02.123 IST</code></td>
+        </tr>
+        <tr class="ok">
+          <td>80</td>
+          <td>7.904</td>
+          <td>8.756</td>
+          <td>851</td>
+          <td>204</td>
+          <td>21</td>
+          <td>100</td>
+          <td>192865</td>
+          <td><code>2026-11-26 17:29:02.225 IST</code></td>
+        </tr>
+        <tr class="ok">
+          <td>81</td>
+          <td>8.004</td>
+          <td>8.861</td>
+          <td>856</td>
+          <td>204</td>
+          <td>20</td>
+          <td>100</td>
+          <td>192864</td>
+          <td><code>2026-11-26 17:29:02.325 IST</code></td>
+        </tr>
+        <tr class="ok">
+          <td>82</td>
+          <td>8.105</td>
+          <td>8.955</td>
+          <td>849</td>
+          <td>204</td>
+          <td>19</td>
+          <td>100</td>
+          <td>192863</td>
+          <td><code>2026-11-26 17:29:02.427 IST</code></td>
+        </tr>
+        <tr class="ok">
+          <td>83</td>
+          <td>8.205</td>
+          <td>9.06</td>
+          <td>855</td>
+          <td>204</td>
+          <td>18</td>
+          <td>100</td>
+          <td>192862</td>
+          <td><code>2026-11-26 17:29:02.527 IST</code></td>
+        </tr>
+        <tr class="ok">
+          <td>84</td>
+          <td>8.302</td>
+          <td>9.155</td>
+          <td>853</td>
+          <td>204</td>
+          <td>17</td>
+          <td>100</td>
+          <td>192861</td>
+          <td><code>2026-11-26 17:29:02.623 IST</code></td>
+        </tr>
+        <tr class="ok">
+          <td>85</td>
+          <td>8.405</td>
+          <td>9.254</td>
+          <td>848</td>
+          <td>204</td>
+          <td>16</td>
+          <td>100</td>
+          <td>192860</td>
+          <td><code>2026-11-26 17:29:02.727 IST</code></td>
+        </tr>
+        <tr class="ok">
+          <td>86</td>
+          <td>8.505</td>
+          <td>9.366</td>
+          <td>861</td>
+          <td>204</td>
+          <td>15</td>
+          <td>100</td>
+          <td>192859</td>
+          <td><code>2026-11-26 17:29:02.827 IST</code></td>
+        </tr>
+        <tr class="ok">
+          <td>87</td>
+          <td>8.6</td>
+          <td>9.46</td>
+          <td>859</td>
+          <td>204</td>
+          <td>14</td>
+          <td>100</td>
+          <td>192858</td>
+          <td><code>2026-11-26 17:29:02.922 IST</code></td>
+        </tr>
+        <tr class="ok">
+          <td>88</td>
+          <td>8.702</td>
+          <td>9.557</td>
+          <td>855</td>
+          <td>204</td>
+          <td>13</td>
+          <td>100</td>
+          <td>192857</td>
+          <td><code>2026-11-26 17:29:03.023 IST</code></td>
+        </tr>
+        <tr class="ok">
+          <td>89</td>
+          <td>8.805</td>
+          <td>9.674</td>
+          <td>869</td>
+          <td>204</td>
+          <td>12</td>
+          <td>100</td>
+          <td>192856</td>
+          <td><code>2026-11-26 17:29:03.127 IST</code></td>
+        </tr>
+        <tr class="ok">
+          <td>90</td>
+          <td>8.905</td>
+          <td>9.758</td>
+          <td>852</td>
+          <td>204</td>
+          <td>11</td>
+          <td>100</td>
+          <td>192855</td>
+          <td><code>2026-11-26 17:29:03.227 IST</code></td>
+        </tr>
+        <tr class="ok">
+          <td>91</td>
+          <td>9.002</td>
+          <td>9.852</td>
+          <td>850</td>
+          <td>204</td>
+          <td>10</td>
+          <td>100</td>
+          <td>192854</td>
+          <td><code>2026-11-26 17:29:03.323 IST</code></td>
+        </tr>
+        <tr class="ok">
+          <td>92</td>
+          <td>9.105</td>
+          <td>9.955</td>
+          <td>850</td>
+          <td>204</td>
+          <td>9</td>
+          <td>100</td>
+          <td>192853</td>
+          <td><code>2026-11-26 17:29:03.427 IST</code></td>
+        </tr>
+        <tr class="ok">
+          <td>93</td>
+          <td>9.205</td>
+          <td>10.053</td>
+          <td>847</td>
+          <td>204</td>
+          <td>8</td>
+          <td>100</td>
+          <td>192852</td>
+          <td><code>2026-11-26 17:29:03.527 IST</code></td>
+        </tr>
+        <tr class="ok">
+          <td>94</td>
+          <td>9.302</td>
+          <td>10.154</td>
+          <td>852</td>
+          <td>204</td>
+          <td>7</td>
+          <td>100</td>
+          <td>192851</td>
+          <td><code>2026-11-26 17:29:03.623 IST</code></td>
+        </tr>
+        <tr class="ok">
+          <td>95</td>
+          <td>9.405</td>
+          <td>10.262</td>
+          <td>856</td>
+          <td>204</td>
+          <td>6</td>
+          <td>100</td>
+          <td>192850</td>
+          <td><code>2026-11-26 17:29:03.727 IST</code></td>
+        </tr>
+        <tr class="ok">
+          <td>96</td>
+          <td>9.501</td>
+          <td>10.367</td>
+          <td>865</td>
+          <td>204</td>
+          <td>5</td>
+          <td>100</td>
+          <td>192849</td>
+          <td><code>2026-11-26 17:29:03.823 IST</code></td>
+        </tr>
+        <tr class="ok">
+          <td>97</td>
+          <td>9.605</td>
+          <td>10.456</td>
+          <td>850</td>
+          <td>204</td>
+          <td>4</td>
+          <td>100</td>
+          <td>192848</td>
+          <td><code>2026-11-26 17:29:03.927 IST</code></td>
+        </tr>
+        <tr class="ok">
+          <td>98</td>
+          <td>9.705</td>
+          <td>10.557</td>
+          <td>851</td>
+          <td>204</td>
+          <td>3</td>
+          <td>100</td>
+          <td>192847</td>
+          <td><code>2026-11-26 17:29:04.027 IST</code></td>
+        </tr>
+        <tr class="ok">
+          <td>99</td>
+          <td>9.805</td>
+          <td>10.651</td>
+          <td>845</td>
+          <td>204</td>
+          <td>2</td>
+          <td>100</td>
+          <td>192846</td>
+          <td><code>2026-11-26 17:29:04.127 IST</code></td>
+        </tr>
+        <tr class="ok">
+          <td>100</td>
+          <td>9.905</td>
+          <td>10.766</td>
+          <td>861</td>
+          <td>204</td>
+          <td>1</td>
+          <td>100</td>
+          <td>192845</td>
+          <td><code>2026-11-26 17:29:04.227 IST</code></td>
+        </tr></tbody>
+    </table>
+  </div>
+
+  <div class="card">
+    <h2>5) Full time log — Wave 2 (all 150)</h2>
+    <table>
+      <thead>
+        <tr>
+          <th>#</th><th>sent_offset_s</th><th>done_offset_s</th><th>ms</th>
+          <th>status</th><th>rate_remaining</th><th>rate_max</th>
+          <th>daily_remaining</th><th>sent_time (IST)</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr class="ok">
+          <td>1</td>
+          <td>0.001</td>
+          <td>0.865</td>
+          <td>864</td>
+          <td>204</td>
+          <td>99</td>
+          <td>100</td>
+          <td>192844</td>
+          <td><code>2026-11-26 17:29:17.092 IST</code></td>
+        </tr>
+        <tr class="ok">
+          <td>2</td>
+          <td>0.071</td>
+          <td>0.923</td>
+          <td>852</td>
+          <td>204</td>
+          <td>99</td>
+          <td>100</td>
+          <td>192844</td>
+          <td><code>2026-11-26 17:29:17.162 IST</code></td>
+        </tr>
+        <tr class="ok">
+          <td>3</td>
+          <td>0.138</td>
+          <td>1.01</td>
+          <td>872</td>
+          <td>204</td>
+          <td>99</td>
+          <td>100</td>
+          <td>192843</td>
+          <td><code>2026-11-26 17:29:17.229 IST</code></td>
+        </tr>
+        <tr class="ok">
+          <td>4</td>
+          <td>0.205</td>
+          <td>1.094</td>
+          <td>888</td>
+          <td>204</td>
+          <td>99</td>
+          <td>100</td>
+          <td>192842</td>
+          <td><code>2026-11-26 17:29:17.296 IST</code></td>
+        </tr>
+        <tr class="ok">
+          <td>5</td>
+          <td>0.272</td>
+          <td>1.144</td>
+          <td>872</td>
+          <td>204</td>
+          <td>99</td>
+          <td>100</td>
+          <td>192841</td>
+          <td><code>2026-11-26 17:29:17.363 IST</code></td>
+        </tr>
+        <tr class="ok">
+          <td>6</td>
+          <td>0.338</td>
+          <td>1.197</td>
+          <td>858</td>
+          <td>204</td>
+          <td>98</td>
+          <td>100</td>
+          <td>192840</td>
+          <td><code>2026-11-26 17:29:17.429 IST</code></td>
+        </tr>
+        <tr class="ok">
+          <td>7</td>
+          <td>0.401</td>
+          <td>1.258</td>
+          <td>857</td>
+          <td>204</td>
+          <td>98</td>
+          <td>100</td>
+          <td>192839</td>
+          <td><code>2026-11-26 17:29:17.492 IST</code></td>
+        </tr>
+        <tr class="ok">
+          <td>8</td>
+          <td>0.471</td>
+          <td>1.317</td>
+          <td>846</td>
+          <td>204</td>
+          <td>97</td>
+          <td>100</td>
+          <td>192838</td>
+          <td><code>2026-11-26 17:29:17.562 IST</code></td>
+        </tr>
+        <tr class="ok">
+          <td>9</td>
+          <td>0.537</td>
+          <td>1.399</td>
+          <td>861</td>
+          <td>204</td>
+          <td>96</td>
+          <td>100</td>
+          <td>192837</td>
+          <td><code>2026-11-26 17:29:17.628 IST</code></td>
+        </tr>
+        <tr class="ok">
+          <td>10</td>
+          <td>0.606</td>
+          <td>1.464</td>
+          <td>858</td>
+          <td>204</td>
+          <td>95</td>
+          <td>100</td>
+          <td>192836</td>
+          <td><code>2026-11-26 17:29:17.697 IST</code></td>
+        </tr>
+        <tr class="ok">
+          <td>11</td>
+          <td>0.672</td>
+          <td>1.531</td>
+          <td>859</td>
+          <td>204</td>
+          <td>94</td>
+          <td>100</td>
+          <td>192835</td>
+          <td><code>2026-11-26 17:29:17.763 IST</code></td>
+        </tr>
+        <tr class="ok">
+          <td>12</td>
+          <td>0.736</td>
+          <td>1.602</td>
+          <td>865</td>
+          <td>204</td>
+          <td>93</td>
+          <td>100</td>
+          <td>192834</td>
+          <td><code>2026-11-26 17:29:17.827 IST</code></td>
+        </tr>
+        <tr class="ok">
+          <td>13</td>
+          <td>0.805</td>
+          <td>1.693</td>
+          <td>888</td>
+          <td>204</td>
+          <td>92</td>
+          <td>100</td>
+          <td>192832</td>
+          <td><code>2026-11-26 17:29:17.896 IST</code></td>
+        </tr>
+        <tr class="ok">
+          <td>14</td>
+          <td>0.87</td>
+          <td>1.756</td>
+          <td>886</td>
+          <td>204</td>
+          <td>91</td>
+          <td>100</td>
+          <td>192832</td>
+          <td><code>2026-11-26 17:29:17.961 IST</code></td>
+        </tr>
+        <tr class="ok">
+          <td>15</td>
+          <td>0.938</td>
+          <td>1.819</td>
+          <td>881</td>
+          <td>204</td>
+          <td>90</td>
+          <td>100</td>
+          <td>192831</td>
+          <td><code>2026-11-26 17:29:18.029 IST</code></td>
+        </tr>
+        <tr class="ok">
+          <td>16</td>
+          <td>1.0</td>
+          <td>1.859</td>
+          <td>858</td>
+          <td>204</td>
+          <td>89</td>
+          <td>100</td>
+          <td>192830</td>
+          <td><code>2026-11-26 17:29:18.091 IST</code></td>
+        </tr>
+        <tr class="ok">
+          <td>17</td>
+          <td>1.07</td>
+          <td>1.932</td>
+          <td>862</td>
+          <td>204</td>
+          <td>88</td>
+          <td>100</td>
+          <td>192829</td>
+          <td><code>2026-11-26 17:29:18.161 IST</code></td>
+        </tr>
+        <tr class="ok">
+          <td>18</td>
+          <td>1.138</td>
+          <td>1.989</td>
+          <td>851</td>
+          <td>204</td>
+          <td>87</td>
+          <td>100</td>
+          <td>192828</td>
+          <td><code>2026-11-26 17:29:18.228 IST</code></td>
+        </tr>
+        <tr class="ok">
+          <td>19</td>
+          <td>1.204</td>
+          <td>2.072</td>
+          <td>867</td>
+          <td>204</td>
+          <td>86</td>
+          <td>100</td>
+          <td>192827</td>
+          <td><code>2026-11-26 17:29:18.295 IST</code></td>
+        </tr>
+        <tr class="ok">
+          <td>20</td>
+          <td>1.271</td>
+          <td>2.173</td>
+          <td>902</td>
+          <td>204</td>
+          <td>85</td>
+          <td>100</td>
+          <td>192826</td>
+          <td><code>2026-11-26 17:29:18.362 IST</code></td>
+        </tr>
+        <tr class="ok">
+          <td>21</td>
+          <td>1.338</td>
+          <td>2.219</td>
+          <td>880</td>
+          <td>204</td>
+          <td>84</td>
+          <td>100</td>
+          <td>192825</td>
+          <td><code>2026-11-26 17:29:18.429 IST</code></td>
+        </tr>
+        <tr class="ok">
+          <td>22</td>
+          <td>1.404</td>
+          <td>2.292</td>
+          <td>887</td>
+          <td>204</td>
+          <td>83</td>
+          <td>100</td>
+          <td>192824</td>
+          <td><code>2026-11-26 17:29:18.494 IST</code></td>
+        </tr>
+        <tr class="ok">
+          <td>23</td>
+          <td>1.471</td>
+          <td>2.335</td>
+          <td>864</td>
+          <td>204</td>
+          <td>82</td>
+          <td>100</td>
+          <td>192823</td>
+          <td><code>2026-11-26 17:29:18.562 IST</code></td>
+        </tr>
+        <tr class="ok">
+          <td>24</td>
+          <td>1.536</td>
+          <td>2.391</td>
+          <td>854</td>
+          <td>204</td>
+          <td>81</td>
+          <td>100</td>
+          <td>192822</td>
+          <td><code>2026-11-26 17:29:18.627 IST</code></td>
+        </tr>
+        <tr class="ok">
+          <td>25</td>
+          <td>1.6</td>
+          <td>2.502</td>
+          <td>901</td>
+          <td>204</td>
+          <td>80</td>
+          <td>100</td>
+          <td>192820</td>
+          <td><code>2026-11-26 17:29:18.691 IST</code></td>
+        </tr>
+        <tr class="ok">
+          <td>26</td>
+          <td>1.672</td>
+          <td>2.54</td>
+          <td>868</td>
+          <td>204</td>
+          <td>79</td>
+          <td>100</td>
+          <td>192820</td>
+          <td><code>2026-11-26 17:29:18.763 IST</code></td>
+        </tr>
+        <tr class="ok">
+          <td>27</td>
+          <td>1.734</td>
+          <td>2.614</td>
+          <td>880</td>
+          <td>204</td>
+          <td>78</td>
+          <td>100</td>
+          <td>192819</td>
+          <td><code>2026-11-26 17:29:18.825 IST</code></td>
+        </tr>
+        <tr class="ok">
+          <td>28</td>
+          <td>1.805</td>
+          <td>2.654</td>
+          <td>848</td>
+          <td>204</td>
+          <td>78</td>
+          <td>100</td>
+          <td>192818</td>
+          <td><code>2026-11-26 17:29:18.896 IST</code></td>
+        </tr>
+        <tr class="ok">
+          <td>29</td>
+          <td>1.872</td>
+          <td>2.736</td>
+          <td>864</td>
+          <td>204</td>
+          <td>76</td>
+          <td>100</td>
+          <td>192817</td>
+          <td><code>2026-11-26 17:29:18.963 IST</code></td>
+        </tr>
+        <tr class="ok">
+          <td>30</td>
+          <td>1.934</td>
+          <td>2.786</td>
+          <td>852</td>
+          <td>204</td>
+          <td>75</td>
+          <td>100</td>
+          <td>192816</td>
+          <td><code>2026-11-26 17:29:19.025 IST</code></td>
+        </tr>
+        <tr class="ok">
+          <td>31</td>
+          <td>2.0</td>
+          <td>2.861</td>
+          <td>860</td>
+          <td>204</td>
+          <td>74</td>
+          <td>100</td>
+          <td>192815</td>
+          <td><code>2026-11-26 17:29:19.091 IST</code></td>
+        </tr>
+        <tr class="ok">
+          <td>32</td>
+          <td>2.072</td>
+          <td>2.921</td>
+          <td>848</td>
+          <td>204</td>
+          <td>73</td>
+          <td>100</td>
+          <td>192814</td>
+          <td><code>2026-11-26 17:29:19.163 IST</code></td>
+        </tr>
+        <tr class="ok">
+          <td>33</td>
+          <td>2.134</td>
+          <td>2.992</td>
+          <td>858</td>
+          <td>204</td>
+          <td>72</td>
+          <td>100</td>
+          <td>192813</td>
+          <td><code>2026-11-26 17:29:19.225 IST</code></td>
+        </tr>
+        <tr class="ok">
+          <td>34</td>
+          <td>2.2</td>
+          <td>3.052</td>
+          <td>852</td>
+          <td>204</td>
+          <td>71</td>
+          <td>100</td>
+          <td>192812</td>
+          <td><code>2026-11-26 17:29:19.291 IST</code></td>
+        </tr>
+        <tr class="ok">
+          <td>35</td>
+          <td>2.272</td>
+          <td>3.118</td>
+          <td>846</td>
+          <td>204</td>
+          <td>70</td>
+          <td>100</td>
+          <td>192811</td>
+          <td><code>2026-11-26 17:29:19.363 IST</code></td>
+        </tr>
+        <tr class="ok">
+          <td>36</td>
+          <td>2.338</td>
+          <td>3.189</td>
+          <td>850</td>
+          <td>204</td>
+          <td>69</td>
+          <td>100</td>
+          <td>192810</td>
+          <td><code>2026-11-26 17:29:19.429 IST</code></td>
+        </tr>
+        <tr class="ok">
+          <td>37</td>
+          <td>2.405</td>
+          <td>3.271</td>
+          <td>866</td>
+          <td>204</td>
+          <td>68</td>
+          <td>100</td>
+          <td>192809</td>
+          <td><code>2026-11-26 17:29:19.496 IST</code></td>
+        </tr>
+        <tr class="ok">
+          <td>38</td>
+          <td>2.47</td>
+          <td>3.334</td>
+          <td>864</td>
+          <td>204</td>
+          <td>67</td>
+          <td>100</td>
+          <td>192808</td>
+          <td><code>2026-11-26 17:29:19.561 IST</code></td>
+        </tr>
+        <tr class="ok">
+          <td>39</td>
+          <td>2.538</td>
+          <td>3.394</td>
+          <td>856</td>
+          <td>204</td>
+          <td>66</td>
+          <td>100</td>
+          <td>192807</td>
+          <td><code>2026-11-26 17:29:19.629 IST</code></td>
+        </tr>
+        <tr class="ok">
+          <td>40</td>
+          <td>2.6</td>
+          <td>3.455</td>
+          <td>855</td>
+          <td>204</td>
+          <td>65</td>
+          <td>100</td>
+          <td>192806</td>
+          <td><code>2026-11-26 17:29:19.691 IST</code></td>
+        </tr>
+        <tr class="ok">
+          <td>41</td>
+          <td>2.667</td>
+          <td>3.523</td>
+          <td>856</td>
+          <td>204</td>
+          <td>64</td>
+          <td>100</td>
+          <td>192805</td>
+          <td><code>2026-11-26 17:29:19.758 IST</code></td>
+        </tr>
+        <tr class="ok">
+          <td>42</td>
+          <td>2.738</td>
+          <td>3.592</td>
+          <td>854</td>
+          <td>204</td>
+          <td>63</td>
+          <td>100</td>
+          <td>192804</td>
+          <td><code>2026-11-26 17:29:19.829 IST</code></td>
+        </tr>
+        <tr class="ok">
+          <td>43</td>
+          <td>2.805</td>
+          <td>3.657</td>
+          <td>852</td>
+          <td>204</td>
+          <td>62</td>
+          <td>100</td>
+          <td>192803</td>
+          <td><code>2026-11-26 17:29:19.896 IST</code></td>
+        </tr>
+        <tr class="ok">
+          <td>44</td>
+          <td>2.867</td>
+          <td>3.727</td>
+          <td>859</td>
+          <td>204</td>
+          <td>61</td>
+          <td>100</td>
+          <td>192802</td>
+          <td><code>2026-11-26 17:29:19.958 IST</code></td>
+        </tr>
+        <tr class="ok">
+          <td>45</td>
+          <td>2.938</td>
+          <td>3.798</td>
+          <td>860</td>
+          <td>204</td>
+          <td>60</td>
+          <td>100</td>
+          <td>192801</td>
+          <td><code>2026-11-26 17:29:20.028 IST</code></td>
+        </tr>
+        <tr class="ok">
+          <td>46</td>
+          <td>3.005</td>
+          <td>3.863</td>
+          <td>858</td>
+          <td>204</td>
+          <td>59</td>
+          <td>100</td>
+          <td>192800</td>
+          <td><code>2026-11-26 17:29:20.096 IST</code></td>
+        </tr>
+        <tr class="ok">
+          <td>47</td>
+          <td>3.071</td>
+          <td>3.925</td>
+          <td>853</td>
+          <td>204</td>
+          <td>58</td>
+          <td>100</td>
+          <td>192799</td>
+          <td><code>2026-11-26 17:29:20.162 IST</code></td>
+        </tr>
+        <tr class="ok">
+          <td>48</td>
+          <td>3.138</td>
+          <td>3.986</td>
+          <td>848</td>
+          <td>204</td>
+          <td>57</td>
+          <td>100</td>
+          <td>192798</td>
+          <td><code>2026-11-26 17:29:20.228 IST</code></td>
+        </tr>
+        <tr class="ok">
+          <td>49</td>
+          <td>3.205</td>
+          <td>4.052</td>
+          <td>847</td>
+          <td>204</td>
+          <td>56</td>
+          <td>100</td>
+          <td>192797</td>
+          <td><code>2026-11-26 17:29:20.296 IST</code></td>
+        </tr>
+        <tr class="ok">
+          <td>50</td>
+          <td>3.272</td>
+          <td>4.133</td>
+          <td>861</td>
+          <td>204</td>
+          <td>55</td>
+          <td>100</td>
+          <td>192796</td>
+          <td><code>2026-11-26 17:29:20.363 IST</code></td>
+        </tr>
+        <tr class="ok">
+          <td>51</td>
+          <td>3.338</td>
+          <td>4.193</td>
+          <td>854</td>
+          <td>204</td>
+          <td>54</td>
+          <td>100</td>
+          <td>192795</td>
+          <td><code>2026-11-26 17:29:20.429 IST</code></td>
+        </tr>
+        <tr class="ok">
+          <td>52</td>
+          <td>3.405</td>
+          <td>4.259</td>
+          <td>853</td>
+          <td>204</td>
+          <td>53</td>
+          <td>100</td>
+          <td>192794</td>
+          <td><code>2026-11-26 17:29:20.496 IST</code></td>
+        </tr>
+        <tr class="ok">
+          <td>53</td>
+          <td>3.467</td>
+          <td>4.321</td>
+          <td>854</td>
+          <td>204</td>
+          <td>52</td>
+          <td>100</td>
+          <td>192793</td>
+          <td><code>2026-11-26 17:29:20.558 IST</code></td>
+        </tr>
+        <tr class="ok">
+          <td>54</td>
+          <td>3.538</td>
+          <td>4.387</td>
+          <td>848</td>
+          <td>204</td>
+          <td>51</td>
+          <td>100</td>
+          <td>192792</td>
+          <td><code>2026-11-26 17:29:20.629 IST</code></td>
+        </tr>
+        <tr class="ok">
+          <td>55</td>
+          <td>3.605</td>
+          <td>4.463</td>
+          <td>858</td>
+          <td>204</td>
+          <td>50</td>
+          <td>100</td>
+          <td>192791</td>
+          <td><code>2026-11-26 17:29:20.696 IST</code></td>
+        </tr>
+        <tr class="ok">
+          <td>56</td>
+          <td>3.672</td>
+          <td>4.534</td>
+          <td>862</td>
+          <td>204</td>
+          <td>49</td>
+          <td>100</td>
+          <td>192790</td>
+          <td><code>2026-11-26 17:29:20.763 IST</code></td>
+        </tr>
+        <tr class="ok">
+          <td>57</td>
+          <td>3.734</td>
+          <td>4.612</td>
+          <td>877</td>
+          <td>204</td>
+          <td>48</td>
+          <td>100</td>
+          <td>192789</td>
+          <td><code>2026-11-26 17:29:20.825 IST</code></td>
+        </tr>
+        <tr class="ok">
+          <td>58</td>
+          <td>3.803</td>
+          <td>4.697</td>
+          <td>894</td>
+          <td>204</td>
+          <td>47</td>
+          <td>100</td>
+          <td>192788</td>
+          <td><code>2026-11-26 17:29:20.894 IST</code></td>
+        </tr>
+        <tr class="ok">
+          <td>59</td>
+          <td>3.872</td>
+          <td>4.744</td>
+          <td>872</td>
+          <td>204</td>
+          <td>46</td>
+          <td>100</td>
+          <td>192787</td>
+          <td><code>2026-11-26 17:29:20.963 IST</code></td>
+        </tr>
+        <tr class="ok">
+          <td>60</td>
+          <td>3.934</td>
+          <td>4.793</td>
+          <td>859</td>
+          <td>204</td>
+          <td>45</td>
+          <td>100</td>
+          <td>192786</td>
+          <td><code>2026-11-26 17:29:21.025 IST</code></td>
+        </tr>
+        <tr class="ok">
+          <td>61</td>
+          <td>4.005</td>
+          <td>4.872</td>
+          <td>866</td>
+          <td>204</td>
+          <td>44</td>
+          <td>100</td>
+          <td>192785</td>
+          <td><code>2026-11-26 17:29:21.096 IST</code></td>
+        </tr>
+        <tr class="ok">
+          <td>62</td>
+          <td>4.072</td>
+          <td>5.028</td>
+          <td>956</td>
+          <td>204</td>
+          <td>42</td>
+          <td>100</td>
+          <td>192783</td>
+          <td><code>2026-11-26 17:29:21.163 IST</code></td>
+        </tr>
+        <tr class="ok">
+          <td>63</td>
+          <td>4.138</td>
+          <td>5.032</td>
+          <td>894</td>
+          <td>204</td>
+          <td>42</td>
+          <td>100</td>
+          <td>192783</td>
+          <td><code>2026-11-26 17:29:21.228 IST</code></td>
+        </tr>
+        <tr class="ok">
+          <td>64</td>
+          <td>4.206</td>
+          <td>5.068</td>
+          <td>862</td>
+          <td>204</td>
+          <td>41</td>
+          <td>100</td>
+          <td>192783</td>
+          <td><code>2026-11-26 17:29:21.297 IST</code></td>
+        </tr>
+        <tr class="ok">
+          <td>65</td>
+          <td>4.271</td>
+          <td>5.13</td>
+          <td>859</td>
+          <td>204</td>
+          <td>41</td>
+          <td>100</td>
+          <td>192781</td>
+          <td><code>2026-11-26 17:29:21.362 IST</code></td>
+        </tr>
+        <tr class="ok">
+          <td>66</td>
+          <td>4.338</td>
+          <td>5.201</td>
+          <td>862</td>
+          <td>204</td>
+          <td>41</td>
+          <td>100</td>
+          <td>192780</td>
+          <td><code>2026-11-26 17:29:21.429 IST</code></td>
+        </tr>
+        <tr class="ok">
+          <td>67</td>
+          <td>4.404</td>
+          <td>5.262</td>
+          <td>858</td>
+          <td>204</td>
+          <td>38</td>
+          <td>100</td>
+          <td>192779</td>
+          <td><code>2026-11-26 17:29:21.495 IST</code></td>
+        </tr>
+        <tr class="ok">
+          <td>68</td>
+          <td>4.472</td>
+          <td>5.327</td>
+          <td>854</td>
+          <td>204</td>
+          <td>37</td>
+          <td>100</td>
+          <td>192778</td>
+          <td><code>2026-11-26 17:29:21.563 IST</code></td>
+        </tr>
+        <tr class="ok">
+          <td>69</td>
+          <td>4.538</td>
+          <td>5.394</td>
+          <td>856</td>
+          <td>204</td>
+          <td>36</td>
+          <td>100</td>
+          <td>192777</td>
+          <td><code>2026-11-26 17:29:21.628 IST</code></td>
+        </tr>
+        <tr class="ok">
+          <td>70</td>
+          <td>4.603</td>
+          <td>5.479</td>
+          <td>875</td>
+          <td>204</td>
+          <td>35</td>
+          <td>100</td>
+          <td>192776</td>
+          <td><code>2026-11-26 17:29:21.694 IST</code></td>
+        </tr>
+        <tr class="ok">
+          <td>71</td>
+          <td>4.667</td>
+          <td>5.532</td>
+          <td>865</td>
+          <td>204</td>
+          <td>34</td>
+          <td>100</td>
+          <td>192775</td>
+          <td><code>2026-11-26 17:29:21.758 IST</code></td>
+        </tr>
+        <tr class="ok">
+          <td>72</td>
+          <td>4.734</td>
+          <td>5.586</td>
+          <td>852</td>
+          <td>204</td>
+          <td>33</td>
+          <td>100</td>
+          <td>192774</td>
+          <td><code>2026-11-26 17:29:21.825 IST</code></td>
+        </tr>
+        <tr class="ok">
+          <td>73</td>
+          <td>4.805</td>
+          <td>5.66</td>
+          <td>855</td>
+          <td>204</td>
+          <td>32</td>
+          <td>100</td>
+          <td>192773</td>
+          <td><code>2026-11-26 17:29:21.896 IST</code></td>
+        </tr>
+        <tr class="ok">
+          <td>74</td>
+          <td>4.872</td>
+          <td>5.728</td>
+          <td>855</td>
+          <td>204</td>
+          <td>31</td>
+          <td>100</td>
+          <td>192772</td>
+          <td><code>2026-11-26 17:29:21.963 IST</code></td>
+        </tr>
+        <tr class="ok">
+          <td>75</td>
+          <td>4.938</td>
+          <td>5.786</td>
+          <td>847</td>
+          <td>204</td>
+          <td>30</td>
+          <td>100</td>
+          <td>192771</td>
+          <td><code>2026-11-26 17:29:22.029 IST</code></td>
+        </tr>
+        <tr class="ok">
+          <td>76</td>
+          <td>5.001</td>
+          <td>5.857</td>
+          <td>855</td>
+          <td>204</td>
+          <td>29</td>
+          <td>100</td>
+          <td>192770</td>
+          <td><code>2026-11-26 17:29:22.092 IST</code></td>
+        </tr>
+        <tr class="ok">
+          <td>77</td>
+          <td>5.072</td>
+          <td>5.923</td>
+          <td>850</td>
+          <td>204</td>
+          <td>28</td>
+          <td>100</td>
+          <td>192769</td>
+          <td><code>2026-11-26 17:29:22.163 IST</code></td>
+        </tr>
+        <tr class="ok">
+          <td>78</td>
+          <td>5.138</td>
+          <td>6.008</td>
+          <td>870</td>
+          <td>204</td>
+          <td>27</td>
+          <td>100</td>
+          <td>192768</td>
+          <td><code>2026-11-26 17:29:22.228 IST</code></td>
+        </tr>
+        <tr class="ok">
+          <td>79</td>
+          <td>5.201</td>
+          <td>6.054</td>
+          <td>853</td>
+          <td>204</td>
+          <td>26</td>
+          <td>100</td>
+          <td>192767</td>
+          <td><code>2026-11-26 17:29:22.292 IST</code></td>
+        </tr>
+        <tr class="ok">
+          <td>80</td>
+          <td>5.27</td>
+          <td>6.119</td>
+          <td>848</td>
+          <td>204</td>
+          <td>25</td>
+          <td>100</td>
+          <td>192766</td>
+          <td><code>2026-11-26 17:29:22.361 IST</code></td>
+        </tr>
+        <tr class="ok">
+          <td>81</td>
+          <td>5.334</td>
+          <td>6.187</td>
+          <td>853</td>
+          <td>204</td>
+          <td>24</td>
+          <td>100</td>
+          <td>192765</td>
+          <td><code>2026-11-26 17:29:22.425 IST</code></td>
+        </tr>
+        <tr class="ok">
+          <td>82</td>
+          <td>5.4</td>
+          <td>6.259</td>
+          <td>858</td>
+          <td>204</td>
+          <td>23</td>
+          <td>100</td>
+          <td>192764</td>
+          <td><code>2026-11-26 17:29:22.491 IST</code></td>
+        </tr>
+        <tr class="ok">
+          <td>83</td>
+          <td>5.471</td>
+          <td>6.323</td>
+          <td>852</td>
+          <td>204</td>
+          <td>22</td>
+          <td>100</td>
+          <td>192763</td>
+          <td><code>2026-11-26 17:29:22.562 IST</code></td>
+        </tr>
+        <tr class="ok">
+          <td>84</td>
+          <td>5.538</td>
+          <td>6.393</td>
+          <td>855</td>
+          <td>204</td>
+          <td>21</td>
+          <td>100</td>
+          <td>192762</td>
+          <td><code>2026-11-26 17:29:22.628 IST</code></td>
+        </tr>
+        <tr class="ok">
+          <td>85</td>
+          <td>5.605</td>
+          <td>6.47</td>
+          <td>864</td>
+          <td>204</td>
+          <td>20</td>
+          <td>100</td>
+          <td>192761</td>
+          <td><code>2026-11-26 17:29:22.696 IST</code></td>
+        </tr>
+        <tr class="ok">
+          <td>86</td>
+          <td>5.672</td>
+          <td>6.524</td>
+          <td>852</td>
+          <td>204</td>
+          <td>19</td>
+          <td>100</td>
+          <td>192760</td>
+          <td><code>2026-11-26 17:29:22.763 IST</code></td>
+        </tr>
+        <tr class="ok">
+          <td>87</td>
+          <td>5.738</td>
+          <td>6.593</td>
+          <td>854</td>
+          <td>204</td>
+          <td>18</td>
+          <td>100</td>
+          <td>192759</td>
+          <td><code>2026-11-26 17:29:22.829 IST</code></td>
+        </tr>
+        <tr class="ok">
+          <td>88</td>
+          <td>5.803</td>
+          <td>6.659</td>
+          <td>855</td>
+          <td>204</td>
+          <td>17</td>
+          <td>100</td>
+          <td>192758</td>
+          <td><code>2026-11-26 17:29:22.894 IST</code></td>
+        </tr>
+        <tr class="ok">
+          <td>89</td>
+          <td>5.867</td>
+          <td>6.715</td>
+          <td>847</td>
+          <td>204</td>
+          <td>16</td>
+          <td>100</td>
+          <td>192757</td>
+          <td><code>2026-11-26 17:29:22.958 IST</code></td>
+        </tr>
+        <tr class="ok">
+          <td>90</td>
+          <td>5.938</td>
+          <td>6.793</td>
+          <td>855</td>
+          <td>204</td>
+          <td>15</td>
+          <td>100</td>
+          <td>192756</td>
+          <td><code>2026-11-26 17:29:23.028 IST</code></td>
+        </tr>
+        <tr class="ok">
+          <td>91</td>
+          <td>6.0</td>
+          <td>6.855</td>
+          <td>855</td>
+          <td>204</td>
+          <td>14</td>
+          <td>100</td>
+          <td>192755</td>
+          <td><code>2026-11-26 17:29:23.091 IST</code></td>
+        </tr>
+        <tr class="ok">
+          <td>92</td>
+          <td>6.07</td>
+          <td>6.93</td>
+          <td>859</td>
+          <td>204</td>
+          <td>13</td>
+          <td>100</td>
+          <td>192754</td>
+          <td><code>2026-11-26 17:29:23.161 IST</code></td>
+        </tr>
+        <tr class="ok">
+          <td>93</td>
+          <td>6.138</td>
+          <td>7.0</td>
+          <td>862</td>
+          <td>204</td>
+          <td>12</td>
+          <td>100</td>
+          <td>192753</td>
+          <td><code>2026-11-26 17:29:23.229 IST</code></td>
+        </tr>
+        <tr class="ok">
+          <td>94</td>
+          <td>6.203</td>
+          <td>7.084</td>
+          <td>880</td>
+          <td>204</td>
+          <td>11</td>
+          <td>100</td>
+          <td>192752</td>
+          <td><code>2026-11-26 17:29:23.294 IST</code></td>
+        </tr>
+        <tr class="ok">
+          <td>95</td>
+          <td>6.272</td>
+          <td>7.128</td>
+          <td>856</td>
+          <td>204</td>
+          <td>10</td>
+          <td>100</td>
+          <td>192751</td>
+          <td><code>2026-11-26 17:29:23.363 IST</code></td>
+        </tr>
+        <tr class="ok">
+          <td>96</td>
+          <td>6.338</td>
+          <td>7.191</td>
+          <td>853</td>
+          <td>204</td>
+          <td>9</td>
+          <td>100</td>
+          <td>192750</td>
+          <td><code>2026-11-26 17:29:23.429 IST</code></td>
+        </tr>
+        <tr class="ok">
+          <td>97</td>
+          <td>6.404</td>
+          <td>7.257</td>
+          <td>852</td>
+          <td>204</td>
+          <td>8</td>
+          <td>100</td>
+          <td>192749</td>
+          <td><code>2026-11-26 17:29:23.495 IST</code></td>
+        </tr>
+        <tr class="ok">
+          <td>98</td>
+          <td>6.472</td>
+          <td>7.335</td>
+          <td>862</td>
+          <td>204</td>
+          <td>7</td>
+          <td>100</td>
+          <td>192748</td>
+          <td><code>2026-11-26 17:29:23.563 IST</code></td>
+        </tr>
+        <tr class="ok">
+          <td>99</td>
+          <td>6.534</td>
+          <td>7.393</td>
+          <td>859</td>
+          <td>204</td>
+          <td>6</td>
+          <td>100</td>
+          <td>192747</td>
+          <td><code>2026-11-26 17:29:23.625 IST</code></td>
+        </tr>
+        <tr class="ok">
+          <td>100</td>
+          <td>6.603</td>
+          <td>7.455</td>
+          <td>852</td>
+          <td>204</td>
+          <td>5</td>
+          <td>100</td>
+          <td>192746</td>
+          <td><code>2026-11-26 17:29:23.694 IST</code></td>
+        </tr>
+        <tr class="ok">
+          <td>101</td>
+          <td>6.671</td>
+          <td>7.523</td>
+          <td>852</td>
+          <td>204</td>
+          <td>4</td>
+          <td>100</td>
+          <td>192745</td>
+          <td><code>2026-11-26 17:29:23.762 IST</code></td>
+        </tr>
+        <tr class="ok">
+          <td>102</td>
+          <td>6.737</td>
+          <td>7.608</td>
+          <td>871</td>
+          <td>204</td>
+          <td>3</td>
+          <td>100</td>
+          <td>192744</td>
+          <td><code>2026-11-26 17:29:23.828 IST</code></td>
+        </tr>
+        <tr class="ok">
+          <td>103</td>
+          <td>6.804</td>
+          <td>7.671</td>
+          <td>866</td>
+          <td>204</td>
+          <td>2</td>
+          <td>100</td>
+          <td>192743</td>
+          <td><code>2026-11-26 17:29:23.895 IST</code></td>
+        </tr>
+        <tr class="ok">
+          <td>104</td>
+          <td>6.869</td>
+          <td>7.757</td>
+          <td>887</td>
+          <td>204</td>
+          <td>1</td>
+          <td>100</td>
+          <td>192741</td>
+          <td><code>2026-11-26 17:29:23.959 IST</code></td>
+        </tr>
+        <tr class="ok">
+          <td>105</td>
+          <td>6.938</td>
+          <td>7.785</td>
+          <td>846</td>
+          <td>204</td>
+          <td>0</td>
+          <td>100</td>
+          <td>192741</td>
+          <td><code>2026-11-26 17:29:24.029 IST</code></td>
+        </tr>
+        <tr class="fail">
+          <td>106</td>
+          <td>7.0</td>
+          <td>7.691</td>
+          <td>691</td>
+          <td>429</td>
+          <td>0</td>
+          <td>100</td>
+          <td>192741</td>
+          <td><code>2026-11-26 17:29:24.091 IST</code></td>
+        </tr>
+        <tr class="fail">
+          <td>107</td>
+          <td>7.072</td>
+          <td>7.758</td>
+          <td>686</td>
+          <td>429</td>
+          <td>0</td>
+          <td>100</td>
+          <td>192740</td>
+          <td><code>2026-11-26 17:29:24.163 IST</code></td>
+        </tr>
+        <tr class="fail">
+          <td>108</td>
+          <td>7.134</td>
+          <td>7.813</td>
+          <td>679</td>
+          <td>429</td>
+          <td>0</td>
+          <td>100</td>
+          <td>192740</td>
+          <td><code>2026-11-26 17:29:24.225 IST</code></td>
+        </tr>
+        <tr class="fail">
+          <td>109</td>
+          <td>7.2</td>
+          <td>7.891</td>
+          <td>690</td>
+          <td>429</td>
+          <td>0</td>
+          <td>100</td>
+          <td>192740</td>
+          <td><code>2026-11-26 17:29:24.291 IST</code></td>
+        </tr>
+        <tr class="fail">
+          <td>110</td>
+          <td>7.274</td>
+          <td>7.975</td>
+          <td>701</td>
+          <td>429</td>
+          <td>0</td>
+          <td>100</td>
+          <td>192740</td>
+          <td><code>2026-11-26 17:29:24.365 IST</code></td>
+        </tr>
+        <tr class="fail">
+          <td>111</td>
+          <td>7.336</td>
+          <td>8.014</td>
+          <td>678</td>
+          <td>429</td>
+          <td>0</td>
+          <td>100</td>
+          <td>192740</td>
+          <td><code>2026-11-26 17:29:24.427 IST</code></td>
+        </tr>
+        <tr class="fail">
+          <td>112</td>
+          <td>7.4</td>
+          <td>8.084</td>
+          <td>683</td>
+          <td>429</td>
+          <td>0</td>
+          <td>100</td>
+          <td>192740</td>
+          <td><code>2026-11-26 17:29:24.491 IST</code></td>
+        </tr>
+        <tr class="fail">
+          <td>113</td>
+          <td>7.471</td>
+          <td>8.147</td>
+          <td>676</td>
+          <td>429</td>
+          <td>0</td>
+          <td>100</td>
+          <td>192740</td>
+          <td><code>2026-11-26 17:29:24.562 IST</code></td>
+        </tr>
+        <tr class="fail">
+          <td>114</td>
+          <td>7.538</td>
+          <td>8.216</td>
+          <td>677</td>
+          <td>429</td>
+          <td>0</td>
+          <td>100</td>
+          <td>192740</td>
+          <td><code>2026-11-26 17:29:24.629 IST</code></td>
+        </tr>
+        <tr class="fail">
+          <td>115</td>
+          <td>7.6</td>
+          <td>8.284</td>
+          <td>683</td>
+          <td>429</td>
+          <td>0</td>
+          <td>100</td>
+          <td>192740</td>
+          <td><code>2026-11-26 17:29:24.691 IST</code></td>
+        </tr>
+        <tr class="fail">
+          <td>116</td>
+          <td>7.672</td>
+          <td>8.345</td>
+          <td>673</td>
+          <td>429</td>
+          <td>0</td>
+          <td>100</td>
+          <td>192740</td>
+          <td><code>2026-11-26 17:29:24.763 IST</code></td>
+        </tr>
+        <tr class="fail">
+          <td>117</td>
+          <td>7.734</td>
+          <td>8.416</td>
+          <td>682</td>
+          <td>429</td>
+          <td>0</td>
+          <td>100</td>
+          <td>192740</td>
+          <td><code>2026-11-26 17:29:24.825 IST</code></td>
+        </tr>
+        <tr class="fail">
+          <td>118</td>
+          <td>7.804</td>
+          <td>8.489</td>
+          <td>684</td>
+          <td>429</td>
+          <td>0</td>
+          <td>100</td>
+          <td>192740</td>
+          <td><code>2026-11-26 17:29:24.895 IST</code></td>
+        </tr>
+        <tr class="fail">
+          <td>119</td>
+          <td>7.868</td>
+          <td>8.55</td>
+          <td>681</td>
+          <td>429</td>
+          <td>0</td>
+          <td>100</td>
+          <td>192740</td>
+          <td><code>2026-11-26 17:29:24.959 IST</code></td>
+        </tr>
+        <tr class="fail">
+          <td>120</td>
+          <td>7.938</td>
+          <td>8.62</td>
+          <td>682</td>
+          <td>429</td>
+          <td>0</td>
+          <td>100</td>
+          <td>192740</td>
+          <td><code>2026-11-26 17:29:25.029 IST</code></td>
+        </tr>
+        <tr class="fail">
+          <td>121</td>
+          <td>8.005</td>
+          <td>8.69</td>
+          <td>685</td>
+          <td>429</td>
+          <td>0</td>
+          <td>100</td>
+          <td>192740</td>
+          <td><code>2026-11-26 17:29:25.096 IST</code></td>
+        </tr>
+        <tr class="fail">
+          <td>122</td>
+          <td>8.071</td>
+          <td>8.795</td>
+          <td>724</td>
+          <td>429</td>
+          <td>0</td>
+          <td>100</td>
+          <td>192740</td>
+          <td><code>2026-11-26 17:29:25.162 IST</code></td>
+        </tr>
+        <tr class="fail">
+          <td>123</td>
+          <td>8.138</td>
+          <td>8.88</td>
+          <td>741</td>
+          <td>429</td>
+          <td>0</td>
+          <td>100</td>
+          <td>192740</td>
+          <td><code>2026-11-26 17:29:25.229 IST</code></td>
+        </tr>
+        <tr class="fail">
+          <td>124</td>
+          <td>8.205</td>
+          <td>8.923</td>
+          <td>718</td>
+          <td>429</td>
+          <td>0</td>
+          <td>100</td>
+          <td>192740</td>
+          <td><code>2026-11-26 17:29:25.296 IST</code></td>
+        </tr>
+        <tr class="fail">
+          <td>125</td>
+          <td>8.271</td>
+          <td>9.004</td>
+          <td>733</td>
+          <td>429</td>
+          <td>0</td>
+          <td>100</td>
+          <td>192740</td>
+          <td><code>2026-11-26 17:29:25.361 IST</code></td>
+        </tr>
+        <tr class="fail">
+          <td>126</td>
+          <td>8.337</td>
+          <td>9.088</td>
+          <td>751</td>
+          <td>429</td>
+          <td>0</td>
+          <td>100</td>
+          <td>192740</td>
+          <td><code>2026-11-26 17:29:25.428 IST</code></td>
+        </tr>
+        <tr class="fail">
+          <td>127</td>
+          <td>8.404</td>
+          <td>9.131</td>
+          <td>726</td>
+          <td>429</td>
+          <td>0</td>
+          <td>100</td>
+          <td>192740</td>
+          <td><code>2026-11-26 17:29:25.495 IST</code></td>
+        </tr>
+        <tr class="fail">
+          <td>128</td>
+          <td>8.472</td>
+          <td>9.164</td>
+          <td>691</td>
+          <td>429</td>
+          <td>0</td>
+          <td>100</td>
+          <td>192740</td>
+          <td><code>2026-11-26 17:29:25.563 IST</code></td>
+        </tr>
+        <tr class="fail">
+          <td>129</td>
+          <td>8.538</td>
+          <td>9.218</td>
+          <td>680</td>
+          <td>429</td>
+          <td>0</td>
+          <td>100</td>
+          <td>192740</td>
+          <td><code>2026-11-26 17:29:25.629 IST</code></td>
+        </tr>
+        <tr class="fail">
+          <td>130</td>
+          <td>8.604</td>
+          <td>9.292</td>
+          <td>687</td>
+          <td>429</td>
+          <td>0</td>
+          <td>100</td>
+          <td>192740</td>
+          <td><code>2026-11-26 17:29:25.695 IST</code></td>
+        </tr>
+        <tr class="fail">
+          <td>131</td>
+          <td>8.671</td>
+          <td>9.358</td>
+          <td>686</td>
+          <td>429</td>
+          <td>0</td>
+          <td>100</td>
+          <td>192740</td>
+          <td><code>2026-11-26 17:29:25.762 IST</code></td>
+        </tr>
+        <tr class="fail">
+          <td>132</td>
+          <td>8.736</td>
+          <td>9.424</td>
+          <td>687</td>
+          <td>429</td>
+          <td>0</td>
+          <td>100</td>
+          <td>192740</td>
+          <td><code>2026-11-26 17:29:25.827 IST</code></td>
+        </tr>
+        <tr class="fail">
+          <td>133</td>
+          <td>8.805</td>
+          <td>9.482</td>
+          <td>677</td>
+          <td>429</td>
+          <td>0</td>
+          <td>100</td>
+          <td>192740</td>
+          <td><code>2026-11-26 17:29:25.896 IST</code></td>
+        </tr>
+        <tr class="fail">
+          <td>134</td>
+          <td>8.868</td>
+          <td>9.558</td>
+          <td>689</td>
+          <td>429</td>
+          <td>0</td>
+          <td>100</td>
+          <td>192740</td>
+          <td><code>2026-11-26 17:29:25.959 IST</code></td>
+        </tr>
+        <tr class="fail">
+          <td>135</td>
+          <td>8.938</td>
+          <td>9.612</td>
+          <td>673</td>
+          <td>429</td>
+          <td>0</td>
+          <td>100</td>
+          <td>192740</td>
+          <td><code>2026-11-26 17:29:26.029 IST</code></td>
+        </tr>
+        <tr class="fail">
+          <td>136</td>
+          <td>9.004</td>
+          <td>9.689</td>
+          <td>684</td>
+          <td>429</td>
+          <td>0</td>
+          <td>100</td>
+          <td>192740</td>
+          <td><code>2026-11-26 17:29:26.095 IST</code></td>
+        </tr>
+        <tr class="fail">
+          <td>137</td>
+          <td>9.072</td>
+          <td>9.755</td>
+          <td>683</td>
+          <td>429</td>
+          <td>0</td>
+          <td>100</td>
+          <td>192740</td>
+          <td><code>2026-11-26 17:29:26.163 IST</code></td>
+        </tr>
+        <tr class="fail">
+          <td>138</td>
+          <td>9.138</td>
+          <td>9.82</td>
+          <td>681</td>
+          <td>429</td>
+          <td>0</td>
+          <td>100</td>
+          <td>192740</td>
+          <td><code>2026-11-26 17:29:26.229 IST</code></td>
+        </tr>
+        <tr class="fail">
+          <td>139</td>
+          <td>9.204</td>
+          <td>9.89</td>
+          <td>685</td>
+          <td>429</td>
+          <td>0</td>
+          <td>100</td>
+          <td>192740</td>
+          <td><code>2026-11-26 17:29:26.295 IST</code></td>
+        </tr>
+        <tr class="fail">
+          <td>140</td>
+          <td>9.272</td>
+          <td>9.953</td>
+          <td>681</td>
+          <td>429</td>
+          <td>0</td>
+          <td>100</td>
+          <td>192740</td>
+          <td><code>2026-11-26 17:29:26.363 IST</code></td>
+        </tr>
+        <tr class="fail">
+          <td>141</td>
+          <td>9.336</td>
+          <td>10.019</td>
+          <td>683</td>
+          <td>429</td>
+          <td>0</td>
+          <td>100</td>
+          <td>192740</td>
+          <td><code>2026-11-26 17:29:26.427 IST</code></td>
+        </tr>
+        <tr class="fail">
+          <td>142</td>
+          <td>9.403</td>
+          <td>10.083</td>
+          <td>680</td>
+          <td>429</td>
+          <td>0</td>
+          <td>100</td>
+          <td>192740</td>
+          <td><code>2026-11-26 17:29:26.494 IST</code></td>
+        </tr>
+        <tr class="fail">
+          <td>143</td>
+          <td>9.471</td>
+          <td>10.16</td>
+          <td>689</td>
+          <td>429</td>
+          <td>0</td>
+          <td>100</td>
+          <td>192740</td>
+          <td><code>2026-11-26 17:29:26.562 IST</code></td>
+        </tr>
+        <tr class="fail">
+          <td>144</td>
+          <td>9.538</td>
+          <td>10.219</td>
+          <td>681</td>
+          <td>429</td>
+          <td>0</td>
+          <td>100</td>
+          <td>192740</td>
+          <td><code>2026-11-26 17:29:26.629 IST</code></td>
+        </tr>
+        <tr class="fail">
+          <td>145</td>
+          <td>9.604</td>
+          <td>10.282</td>
+          <td>678</td>
+          <td>429</td>
+          <td>0</td>
+          <td>100</td>
+          <td>192740</td>
+          <td><code>2026-11-26 17:29:26.695 IST</code></td>
+        </tr>
+        <tr class="fail">
+          <td>146</td>
+          <td>9.672</td>
+          <td>10.356</td>
+          <td>684</td>
+          <td>429</td>
+          <td>0</td>
+          <td>100</td>
+          <td>192740</td>
+          <td><code>2026-11-26 17:29:26.763 IST</code></td>
+        </tr>
+        <tr class="fail">
+          <td>147</td>
+          <td>9.734</td>
+          <td>10.436</td>
+          <td>702</td>
+          <td>429</td>
+          <td>0</td>
+          <td>100</td>
+          <td>192740</td>
+          <td><code>2026-11-26 17:29:26.825 IST</code></td>
+        </tr>
+        <tr class="fail">
+          <td>148</td>
+          <td>9.804</td>
+          <td>10.484</td>
+          <td>679</td>
+          <td>429</td>
+          <td>0</td>
+          <td>100</td>
+          <td>192740</td>
+          <td><code>2026-11-26 17:29:26.895 IST</code></td>
+        </tr>
+        <tr class="fail">
+          <td>149</td>
+          <td>9.873</td>
+          <td>10.56</td>
+          <td>687</td>
+          <td>429</td>
+          <td>0</td>
+          <td>100</td>
+          <td>192740</td>
+          <td><code>2026-11-26 17:29:26.963 IST</code></td>
+        </tr>
+        <tr class="fail">
+          <td>150</td>
+          <td>9.934</td>
+          <td>10.623</td>
+          <td>689</td>
+          <td>429</td>
+          <td>0</td>
+          <td>100</td>
+          <td>192740</td>
+          <td><code>2026-11-26 17:29:27.024 IST</code></td>
+        </tr></tbody>
+    </table>
+  </div>
+</body>
+</html>
